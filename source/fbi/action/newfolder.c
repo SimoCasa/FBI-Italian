@@ -43,9 +43,9 @@ static void action_new_folder_onresponse(ui_view* view, void* data, SwkbdButton 
                 linked_list_sort(newFolderData->items, NULL, task_compare_files);
             }
 
-            prompt_display_notify("Success", "Folder created.", COLOR_TEXT, NULL, NULL, NULL);
+            prompt_display_notify("Successo", "Cartella creata.", COLOR_TEXT, NULL, NULL, NULL);
         } else {
-            error_display_res(NULL, NULL, res, "Failed to create folder.");
+            error_display_res(NULL, NULL, res, "Impossibile creare la cartella.");
         }
     }
 
@@ -55,7 +55,7 @@ static void action_new_folder_onresponse(ui_view* view, void* data, SwkbdButton 
 void action_new_folder(linked_list* items, list_item* selected) {
     new_folder_data* data = (new_folder_data*) calloc(1, sizeof(new_folder_data));
     if(data == NULL) {
-        error_display(NULL, NULL, "Failed to allocate new folder data.");
+        error_display(NULL, NULL, "Impossibile allocare i dati della nuova cartella.");
 
         return;
     }
@@ -63,5 +63,5 @@ void action_new_folder(linked_list* items, list_item* selected) {
     data->items = items;
     data->selected = selected;
 
-    kbd_display("Enter folder name", "", SWKBD_TYPE_NORMAL, 0, SWKBD_NOTEMPTY_NOTBLANK, FILE_NAME_MAX, data, action_new_folder_onresponse);
+    kbd_display("Inserisci il nome della cartella", "", SWKBD_TYPE_NORMAL, 0, SWKBD_NOTEMPTY_NOTBLANK, FILE_NAME_MAX, data, action_new_folder_onresponse);
 }

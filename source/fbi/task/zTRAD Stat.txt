@@ -1,0 +1,11 @@
+unitask		V @
+listtitles	V §
+listticket	V §
+listsystem	V §
+listpending V §
+listfile	V #
+listext		V §
+
+@= tradotto
+§= non necessario
+#= in caso di errori riguardare possibilità

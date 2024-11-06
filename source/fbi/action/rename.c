@@ -66,9 +66,9 @@ static void action_rename_onresponse(ui_view* view, void* data, SwkbdButton butt
 
             linked_list_sort(renameData->items, NULL, task_compare_files);
 
-            prompt_display_notify("Success", "Renamed.", COLOR_TEXT, NULL, NULL, NULL);
+            prompt_display_notify("Successo", "Rinominato.", COLOR_TEXT, NULL, NULL, NULL);
         } else {
-            error_display_res(NULL, NULL, res, "Failed to perform rename.");
+            error_display_res(NULL, NULL, res, "Impossibile eseguire la rinomina.");
         }
     }
 
@@ -78,7 +78,7 @@ static void action_rename_onresponse(ui_view* view, void* data, SwkbdButton butt
 void action_rename(linked_list* items, list_item* selected) {
     rename_data* data = (rename_data*) calloc(1, sizeof(rename_data));
     if(data == NULL) {
-        error_display(NULL, NULL, "Failed to allocate rename data.");
+        error_display(NULL, NULL, "Impossibile allocare i dati di rinomina.");
 
         return;
     }
@@ -86,5 +86,5 @@ void action_rename(linked_list* items, list_item* selected) {
     data->items = items;
     data->selected = selected;
 
-    kbd_display("Enter new name", ((file_info*) selected->data)->name, SWKBD_TYPE_NORMAL, 0, SWKBD_NOTEMPTY_NOTBLANK, FILE_NAME_MAX, data, action_rename_onresponse);
+    kbd_display("Inserisci un nuovo nome", ((file_info*) selected->data)->name, SWKBD_TYPE_NORMAL, 0, SWKBD_NOTEMPTY_NOTBLANK, FILE_NAME_MAX, data, action_rename_onresponse);
 }

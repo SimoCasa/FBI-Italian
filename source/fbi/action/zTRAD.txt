@@ -1,0 +1,23 @@
+rename  §
+pastecontent §
+newdolder §
+launchtitle §
+installURL §
+installTicket §
+installcia §
+importsave §
+importseed §
+importsecure §
+extractSMDH §
+exportsave §
+erasesave §
+deletetitle §
+deleteticket §
+deletesystemsave §
+deletesecure §
+deletepending §
+deleteextsave
+deletecontent
+browseuser
+browsetitle
+browsesystem
